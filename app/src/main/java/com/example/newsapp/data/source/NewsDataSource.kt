@@ -5,6 +5,6 @@ import com.example.newsapp.data.News
 
 interface NewsDataSource {
 
-    fun observeTasks(): LiveData<Result<List<News>>>
+    fun observeNews(): LiveData<Result<List<News>>>
 
 }
