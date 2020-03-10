@@ -4,8 +4,9 @@ import androidx.lifecycle.LiveData
 import com.example.newsapp.data.News
 import com.example.newsapp.data.Result
 
-interface NewsDataSource {
+interface NewsRepository {
 
     fun observeNews(): LiveData<Result<List<News>>>
 
+    suspend fun refreshNews()
 }
