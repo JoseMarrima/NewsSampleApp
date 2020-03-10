@@ -14,5 +14,5 @@ interface NewsDao {
     fun observeNews() : LiveData<List<News>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertNews()
+    suspend fun insertNews(news: List<News>)
 }
