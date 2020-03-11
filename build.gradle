@@ -9,7 +9,7 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:3.6.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
         // NOTE: Do not place your application dependencies here; they belong
@@ -64,4 +64,5 @@ ext {
     timberVersion = '4.7.1'
     truthVersion = '0.44'
     retrofit = '2.7.2'
+    constraintLayout = '2.0.0-beta4'
 }

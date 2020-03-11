@@ -6,14 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 
 import com.example.newsapp.R
+import com.example.newsapp.databinding.NewsFragmentBinding
 
 class NewsFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = NewsFragment()
-    }
 
     private lateinit var viewModel: NewsViewModel
 
@@ -21,7 +21,17 @@ class NewsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.news_fragment, container, false)
+        val binding: NewsFragmentBinding = DataBindingUtil.inflate(inflater, R.layout.news_fragment,
+            container, false)
+
+        binding.lifecycleOwner = this
+
+        binding.text.setOnClickListener {
+            this.findNavController()
+                .navigate(NewsFragmentDirections.actionNewsFragmentToNewsDetailsFragment())
+        }
+
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
