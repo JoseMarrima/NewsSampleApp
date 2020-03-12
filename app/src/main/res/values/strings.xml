@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">News App</string>
+    <string name="content_description_image_from_news_article">Image from News Article</string>
+    <string name="general_icon_content_description">general icon</string>
+    <string name="business_icon_content_description">business icon</string>
+    <string name="sport_icon_content_description">sport icon</string>
+    <string name="tech_icon_content_description">tech icon</string>
+    <string name="categories_label">Categories</string>
+    <string name="general_label">General</string>
+    <string name="business_label">Business</string>
+    <string name="sports_label">Sports</string>
+    <string name="technology_label">Technology</string>
+    <string name="top_headlines_label">Top headlines</string>
 </resources>
