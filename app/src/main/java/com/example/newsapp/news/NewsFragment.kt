@@ -8,14 +8,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 
 import com.example.newsapp.R
 import com.example.newsapp.databinding.NewsFragmentBinding
+import com.example.newsapp.di.ViewModelProviderFactory
+import com.example.newsapp.newsdetails.NewsDetailsViewModel
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
-class NewsFragment : Fragment() {
+class NewsFragment : DaggerFragment() {
 
     private lateinit var viewModel: NewsViewModel
+
+    @Inject
+    lateinit var factory: ViewModelProviderFactory
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,18 +34,10 @@ class NewsFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        binding.text.setOnClickListener {
-            this.findNavController()
-                .navigate(NewsFragmentDirections.actionNewsFragmentToNewsDetailsFragment())
-        }
+        viewModel = ViewModelProvider(this, factory)
+            .get(NewsViewModel::class.java)
 
         return binding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(NewsViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }

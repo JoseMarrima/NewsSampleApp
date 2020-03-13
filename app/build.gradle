@@ -107,4 +107,11 @@ dependencies {
     // Retrofit and Gson
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+
+    // Dagger 2
+    api "com.google.dagger:dagger-android:$dagger"
+    api "com.google.dagger:dagger-android-support:$dagger" // if you use the support libraries
+    kapt "com.google.dagger:dagger-android-processor:$dagger"
+    api "com.google.dagger:dagger:$dagger"
+    kapt "com.google.dagger:dagger-compiler:$dagger"
 }
