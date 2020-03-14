@@ -66,4 +66,5 @@ ext {
     retrofit = '2.7.2'
     constraintLayout = '2.0.0-beta4'
     dagger = '2.25.2'
+    glide = '4.11.0'
 }

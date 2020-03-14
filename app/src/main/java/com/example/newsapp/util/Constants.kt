@@ -7,5 +7,5 @@ object Constants {
 
     const val DATABASE_NAME = "news_db"
 
-    const val BASE_URL = "http://newsapi.org/v2/"
+    const val BASE_URL = "https://newsapi.org/v2/"
 }

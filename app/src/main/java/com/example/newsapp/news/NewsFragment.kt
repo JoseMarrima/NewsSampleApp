@@ -1,20 +1,15 @@
 package com.example.newsapp.news
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-
 import com.example.newsapp.R
 import com.example.newsapp.databinding.NewsFragmentBinding
 import com.example.newsapp.di.ViewModelProviderFactory
-import com.example.newsapp.newsdetails.NewsDetailsViewModel
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
@@ -24,6 +19,10 @@ class NewsFragment : DaggerFragment() {
 
     @Inject
     lateinit var factory: ViewModelProviderFactory
+
+    private val adapter = NewsAdapter(ClickListener {
+
+    })
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +35,12 @@ class NewsFragment : DaggerFragment() {
 
         viewModel = ViewModelProvider(this, factory)
             .get(NewsViewModel::class.java)
+
+        binding.newsRv.adapter = adapter
+
+        viewModel.test.observe(viewLifecycleOwner, Observer {
+            adapter.submitList(it)
+        })
 
         return binding.root
     }

@@ -13,6 +13,10 @@ class DefaultNewsRepository(
     private val localNewsDataSource: LocalNewsDataSource
 ) : NewsRepository {
 
+    suspend fun test() :List<News> {
+        return remoteNewsDataSource.getTest()
+    }
+
     override fun observeNews(): LiveData<Result<List<News>>> {
         return localNewsDataSource.observeNews()
     }
