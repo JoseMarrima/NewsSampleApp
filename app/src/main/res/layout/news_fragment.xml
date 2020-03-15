@@ -29,12 +29,25 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:contentDescription="@string/general_icon_content_description"
             app:layout_constraintEnd_toStartOf="@+id/business_icon"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/categories_label"
-            app:srcCompat="@drawable/general_shape"
-            android:contentDescription="@string/general_icon_content_description" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/general_shape" />
+
+        <ImageView
+            android:id="@+id/tech_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/tech_icon_content_description"
+            app:layout_constraintBottom_toTopOf="@+id/sport_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sport_icon"
+            app:layout_constraintTop_toBottomOf="@+id/sport_icon"
+            app:srcCompat="@drawable/technology_shape" />
 
         <ImageView
             android:id="@+id/business_icon"
@@ -59,29 +72,6 @@
             app:layout_constraintTop_toBottomOf="@+id/business_icon"
             app:srcCompat="@drawable/sport_shape"
             android:contentDescription="@string/sport_icon_content_description" />
-
-        <ImageView
-            android:id="@+id/tech_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/sport_icon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/sport_icon"
-            app:layout_constraintTop_toBottomOf="@+id/sport_icon"
-            app:srcCompat="@drawable/technology_shape"
-            android:contentDescription="@string/tech_icon_content_description" />
-
-        <TextView
-            android:id="@+id/categories_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/categories_label"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/general_icon"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/general_label"
@@ -130,7 +120,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/top_headlines_label"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/categories_label"
+            app:layout_constraintStart_toStartOf="@+id/general_icon"
             app:layout_constraintTop_toBottomOf="@+id/general_label" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,7 +38,7 @@ class NewsFragment : DaggerFragment() {
 
         binding.newsRv.adapter = adapter
 
-        viewModel.test.observe(viewLifecycleOwner, Observer {
+        viewModel.news.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
 

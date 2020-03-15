@@ -6,7 +6,7 @@ import com.example.newsapp.data.Result
 
 interface NewsRepository {
 
-    fun observeNews(): LiveData<Result<List<News>>>
+    fun observeNews(): LiveData<List<News>>
 
     suspend fun refreshNews()
 }

@@ -8,10 +8,8 @@ import com.example.newsapp.data.Result.Success
 
 class LocalNewsDataSource(private val newsDao: NewsDao) {
 
-    fun observeNews(): LiveData<Result<List<News>>> {
-        return newsDao.observeNews().map {
-            Success(it)
-        }
+    fun observeNews(): LiveData<List<News>> {
+        return newsDao.observeNews()
     }
 
     suspend fun saveNews(newsList: List<News>) {

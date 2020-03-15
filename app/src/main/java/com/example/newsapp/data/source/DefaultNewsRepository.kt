@@ -1,11 +1,13 @@
 package com.example.newsapp.data.source
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.liveData
 import com.example.newsapp.data.News
 import com.example.newsapp.data.Result
 import com.example.newsapp.data.Result.*
 import com.example.newsapp.data.source.local.LocalNewsDataSource
 import com.example.newsapp.data.source.remote.RemoteNewsDataSource
+import timber.log.Timber
 
 
 class DefaultNewsRepository(
@@ -13,22 +15,13 @@ class DefaultNewsRepository(
     private val localNewsDataSource: LocalNewsDataSource
 ) : NewsRepository {
 
-    suspend fun test() :List<News> {
-        return remoteNewsDataSource.getTest()
-    }
-
-    override fun observeNews(): LiveData<Result<List<News>>> {
-        return localNewsDataSource.observeNews()
+    override fun observeNews(): LiveData<List<News>> = liveData {
+        emitSource(localNewsDataSource.observeNews())
     }
 
     override suspend fun refreshNews() {
-        val remoteNews = remoteNewsDataSource.getRemoteNews()
-
-        if (remoteNews is Success) {
-            localNewsDataSource.saveNews(remoteNews.data)
-        } else if (remoteNews is Error) {
-            throw remoteNews.exception
-        }
+        val news = remoteNewsDataSource.getRemoteNews()
+        localNewsDataSource.saveNews(news)
     }
 
 
