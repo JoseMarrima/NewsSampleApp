@@ -23,7 +23,6 @@ class NewsFragment : DaggerFragment() {
     private val adapter = NewsAdapter(ClickListener {
 
     })
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
