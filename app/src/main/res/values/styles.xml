@@ -6,6 +6,14 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="materialCardViewStyle">@style/NewsCardStyle</item>
     </style>
+
+    <style name="NewsCardStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">8dp</item>
+        <item name="cardCornerRadius">20dp</item>
+    </style>
+
 
 </resources>

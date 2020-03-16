@@ -4,23 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        app:showPaths="false"
+        app:layoutDescription="@xml/motion_scene"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/news_rv"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/top_headlines_label"
             tools:listitem="@layout/list_news_item_card" />
 
         <ImageView
@@ -53,25 +56,25 @@
             android:id="@+id/business_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/business_icon_content_description"
             app:layout_constraintBottom_toTopOf="@+id/general_icon"
             app:layout_constraintEnd_toStartOf="@+id/sport_icon"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/general_icon"
             app:layout_constraintTop_toBottomOf="@+id/general_icon"
-            app:srcCompat="@drawable/business_shape"
-            android:contentDescription="@string/business_icon_content_description" />
+            app:srcCompat="@drawable/business_shape" />
 
         <ImageView
             android:id="@+id/sport_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/sport_icon_content_description"
             app:layout_constraintBottom_toTopOf="@+id/business_icon"
             app:layout_constraintEnd_toStartOf="@+id/tech_icon"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/business_icon"
             app:layout_constraintTop_toBottomOf="@+id/business_icon"
-            app:srcCompat="@drawable/sport_shape"
-            android:contentDescription="@string/sport_icon_content_description" />
+            app:srcCompat="@drawable/sport_shape" />
 
         <TextView
             android:id="@+id/general_label"
@@ -114,7 +117,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tech_icon" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/top_headlines_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -123,5 +126,5 @@
             app:layout_constraintStart_toStartOf="@+id/general_icon"
             app:layout_constraintTop_toBottomOf="@+id/general_label" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>

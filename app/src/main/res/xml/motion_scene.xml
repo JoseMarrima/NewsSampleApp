@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Transition
+        app:constraintSetStart="@id/start"
+        app:constraintSetEnd="@id/end"
+        app:duration="1000">
+        <OnSwipe
+            app:touchAnchorId="@+id/news_rv"
+            app:touchAnchorSide="top"
+            app:dragDirection="dragUp" />
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint android:id="@+id/top_headlines_label"
+            android:visibility="invisible">
+        </Constraint>
+
+        <Constraint android:id="@+id/general_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+
+        <Constraint android:id="@+id/business_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+
+        <Constraint android:id="@+id/tech_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+
+        <Constraint android:id="@+id/sport_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"/>
+
+    </ConstraintSet>
+</MotionScene>
