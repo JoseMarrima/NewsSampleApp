@@ -14,54 +14,69 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_margin="16dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_height="300dp"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        app:cardCornerRadius="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:onClick="@{() -> clickListener.onClick(news)}"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/card_imageView"
-                app:imageUrl="@{news.urlToImage}"
-                android:layout_width="0dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:contentDescription="@string/content_description_image_from_news_article"
-                android:scaleType="centerCrop"
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@drawable/test" />
+                android:id="@+id/imageview_card_view"
+                app:cardPreventCornerOverlap="false"
+                style="@style/CustomCardViewStyle">
+
+                <ImageView
+                    android:id="@+id/card_imageView"
+                    app:imageUrl="@{news.urlToImage}"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:contentDescription="@string/content_description_image_from_news_article"
+                    android:scaleType="centerCrop"
+                    tools:srcCompat="@drawable/test" />
+
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:id="@+id/title_card_textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="16dp"
+                android:fontFamily="@font/roboto"
                 android:text="@{news.title}"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/imageview_card_view"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/card_imageView"
-                app:layout_constraintTop_toBottomOf="@+id/card_imageView"
+                app:layout_constraintStart_toStartOf="@+id/imageview_card_view"
+                app:layout_constraintTop_toBottomOf="@+id/imageview_card_view"
                 tools:text="Corona virus is a problem for countries" />
 
-            <TextView
-                android:id="@+id/author_card_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/title_card_textView"
-                app:layout_constraintTop_toBottomOf="@+id/title_card_textView"
-                tools:text="@tools:sample/full_names" />
+<!--            <TextView-->
+<!--                android:id="@+id/author_card_textView"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_marginBottom="16dp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/title_card_textView"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/title_card_textView"-->
+<!--                tools:text="@tools:sample/full_names" />-->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
 </layout>
+

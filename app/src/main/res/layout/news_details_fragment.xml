@@ -9,65 +9,77 @@
             type="com.example.newsapp.data.News" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".newsdetails.NewsDetailsFragment">
+        android:id="@+id/parent">
 
-        <TextView
-            android:id="@+id/title_textView"
-            style="@style/Base.Widget.MaterialComponents.TextView"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="@{news.title}"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="How Coronavirus is affecting the world economy to stop Coronavirus" />
+            tools:context=".newsdetails.NewsDetailsFragment">
 
-        <TextView
-            android:id="@+id/author_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="@+id/title_textView"
-            app:layout_constraintTop_toBottomOf="@+id/title_textView"
-            tools:text="@tools:sample/full_names" />
+            <ImageView
+                android:id="@+id/details_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{news.urlToImage}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/backgrounds/scenic"
+                android:contentDescription="@string/news_details_image_content_description" />
 
-        <ImageView
-            android:id="@+id/details_imageView"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:scaleType="centerCrop"
-            app:imageUrl="@{news.urlToImage}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/author_textView"
-            app:srcCompat="@color/colorAccent"
-            tools:src="@tools:sample/backgrounds/scenic"
-            tools:srcCompat="@color/colorAccent"
-            android:contentDescription="@string/news_details_image_content_description" />
+            <TextView
+                android:id="@+id/title_textView"
+                style="@style/Base.Widget.MaterialComponents.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="50dp"
+                android:fontFamily="@font/adamina"
+                android:text="@{news.title}"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="@id/details_imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="How Coronavirus is affecting the world economy to stop Coronavirus" />
 
-        <TextView
-            android:id="@+id/description_textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:text="@{news.content}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/details_imageView"
-            tools:text="@tools:sample/lorem/random" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/imageview_card_view"
+                style="@style/CustomCardViewStyle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_textView"
+                app:layout_constraintBottom_toBottomOf="parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/description_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="24dp"
+                    android:fontFamily="@font/roboto"
+                    android:lineSpacingExtra="8dp"
+                    android:text="@{news.content}"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    tools:text="@tools:sample/lorem/random" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
 </layout>
+
