@@ -16,10 +16,12 @@
     <fragment
         android:id="@+id/newsDetailsFragment"
         android:name="com.example.newsapp.newsdetails.NewsDetailsFragment"
-        android:label="news_details_fragment"
-        tools:layout="@layout/news_details_fragment" >
+        tools:layout="@layout/news_details_fragment">
         <action
             android:id="@+id/action_newsDetailsFragment_to_newsFragment"
             app:destination="@id/newsFragment" />
+        <argument
+            android:name="news"
+            app:argType="com.example.newsapp.data.News" />
     </fragment>
 </navigation>

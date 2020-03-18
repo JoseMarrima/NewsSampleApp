@@ -11,4 +11,6 @@
     <string name="sports_label">Sports</string>
     <string name="technology_label">Technology</string>
     <string name="top_headlines_label">Top headlines</string>
+    <string name="news_details_image_content_description">news details image</string>
+    <string name="provided_by_newsapi_org">Provided by Newsapi.org</string>
 </resources>

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.newsapp.R
@@ -30,6 +29,10 @@ class NewsDetailsFragment : DaggerFragment() {
             .get(NewsDetailsViewModel::class.java)
 
         setHasOptionsMenu(true)
+
+        val args = NewsDetailsFragmentArgs.fromBundle(requireArguments())
+
+        binding.news = args.news
 
         return binding.root
     }

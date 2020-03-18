@@ -6,7 +6,7 @@
 
     <androidx.constraintlayout.motion.widget.MotionLayout
         app:showPaths="false"
-        app:layoutDescription="@xml/motion_scene2"
+        app:layoutDescription="@xml/motion_scene"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -30,8 +30,8 @@
 
         <ImageView
             android:id="@+id/general_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:contentDescription="@string/general_icon_content_description"
@@ -43,8 +43,8 @@
 
         <ImageView
             android:id="@+id/tech_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/tech_icon_content_description"
             app:layout_constraintBottom_toTopOf="@+id/sport_icon"
@@ -56,8 +56,8 @@
 
         <ImageView
             android:id="@+id/business_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:contentDescription="@string/business_icon_content_description"
             app:layout_constraintBottom_toTopOf="@+id/general_icon"
             app:layout_constraintEnd_toStartOf="@+id/sport_icon"
@@ -68,8 +68,8 @@
 
         <ImageView
             android:id="@+id/sport_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:contentDescription="@string/sport_icon_content_description"
             app:layout_constraintBottom_toTopOf="@+id/business_icon"
             app:layout_constraintEnd_toStartOf="@+id/tech_icon"
@@ -122,9 +122,10 @@
             android:id="@+id/top_headlines_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             android:text="@string/top_headlines_label"
             android:textSize="18sp"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/general_icon"
             app:layout_constraintTop_toBottomOf="@+id/general_label" />
 

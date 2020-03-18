@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="news"
+            type="com.example.newsapp.data.News" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +22,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="How Coronavirus is affecting the world economy to stop Coronavirus"
+            android:text="@{news.title}"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,12 +46,15 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{news.urlToImage}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/author_textView"
             app:srcCompat="@color/colorAccent"
             tools:src="@tools:sample/backgrounds/scenic"
-            tools:srcCompat="@color/colorAccent" />
+            tools:srcCompat="@color/colorAccent"
+            android:contentDescription="@string/news_details_image_content_description" />
 
         <TextView
             android:id="@+id/description_textView"
@@ -58,7 +63,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            android:text="TextView"
+            android:text="@{news.content}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/details_imageView"

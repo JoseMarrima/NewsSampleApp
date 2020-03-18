@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.newsapp.R
 import com.example.newsapp.databinding.NewsFragmentBinding
 import com.example.newsapp.di.ViewModelProviderFactory
@@ -21,7 +22,8 @@ class NewsFragment : DaggerFragment() {
     lateinit var factory: ViewModelProviderFactory
 
     private val adapter = NewsAdapter(ClickListener {
-
+        this.findNavController().navigate(NewsFragmentDirections
+            .actionNewsFragmentToNewsDetailsFragment(it))
     })
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
