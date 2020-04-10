@@ -3,13 +3,14 @@ package com.example.newsapp.di
 import android.content.Context
 import androidx.room.Room
 import com.example.newsapp.data.source.DefaultNewsRepository
-import com.example.newsapp.data.source.local.LocalNewsDataSource
+import com.example.newsapp.data.source.NewsRepository
 import com.example.newsapp.data.source.local.NewsDao
 import com.example.newsapp.data.source.local.NewsDatabase
 import com.example.newsapp.data.source.remote.NewsService
-import com.example.newsapp.data.source.remote.RemoteNewsDataSource
 import com.example.newsapp.util.Constants.BASE_URL
 import com.example.newsapp.util.Constants.DATABASE_NAME
+import dagger.Binds
+import dagger.BindsInstance
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -47,22 +48,7 @@ object AppModule {
     @JvmStatic
     @Singleton
     @Provides
-    fun provideNewsRepository(remoteNewsDataSource: RemoteNewsDataSource,
-                              localNewsDataSource: LocalNewsDataSource) : DefaultNewsRepository {
-        return DefaultNewsRepository(remoteNewsDataSource, localNewsDataSource)
-    }
-
-    @JvmStatic
-    @Singleton
-    @Provides
-    fun provideLocalDataSource(newsDao: NewsDao) : LocalNewsDataSource {
-        return LocalNewsDataSource(newsDao)
-    }
-
-    @JvmStatic
-    @Singleton
-    @Provides
-    fun provideRemoteDataSource(service: NewsService) : RemoteNewsDataSource {
-        return RemoteNewsDataSource(service)
+    fun provideNewsRepository(service: NewsService, newsDao: NewsDao) : NewsRepository {
+        return DefaultNewsRepository(service, newsDao)
     }
 }

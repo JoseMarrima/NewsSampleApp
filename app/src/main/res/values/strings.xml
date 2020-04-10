@@ -13,4 +13,7 @@
     <string name="top_headlines_label">Top headlines</string>
     <string name="news_details_image_content_description">news details image</string>
     <string name="provided_by_newsapi_org">Provided by Newsapi.org</string>
+    <string name="bookmark">bookmark</string>
+    <string name="size">size</string>
+    <string name="share">share</string>
 </resources>

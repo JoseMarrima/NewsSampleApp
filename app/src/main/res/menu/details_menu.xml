@@ -5,16 +5,16 @@
     <item
         android:id="@+id/bookmark"
         android:icon="@drawable/ic_bookmark_black_24dp"
-        android:title="bookmark"
-        app:showAsAction="always" />
+        android:title="@string/bookmark"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/font_size"
         android:icon="@drawable/ic_format_size_black_24dp"
-        android:title="size"
+        android:title="@string/size"
         app:showAsAction="always" />
     <item
         android:id="@+id/share"
         android:icon="@drawable/ic_reply_black_24dp"
-        android:title="share"
+        android:title="@string/share"
         app:showAsAction="always" />
 </menu>
