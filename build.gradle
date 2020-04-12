@@ -64,6 +64,6 @@ ext {
     truthVersion = '0.44'
     retrofit = '2.7.2'
     constraintLayout = '2.0.0-beta4'
-    dagger = '2.25.2'
+    dagger = '2.23.2'
     glide = '4.11.0'
 }

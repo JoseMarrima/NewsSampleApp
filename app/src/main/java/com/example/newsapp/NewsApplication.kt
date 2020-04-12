@@ -1,12 +1,11 @@
 package com.example.newsapp
 
-import android.app.Application
 import com.example.newsapp.di.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import timber.log.Timber
 
-class NewsApplication : DaggerApplication() {
+open class NewsApplication : DaggerApplication() {
 
     override fun onCreate() {
         super.onCreate()

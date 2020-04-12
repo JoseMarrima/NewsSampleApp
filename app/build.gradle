@@ -119,11 +119,16 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit"
 
     // Dagger 2
-    api "com.google.dagger:dagger-android:$dagger"
-    api "com.google.dagger:dagger-android-support:$dagger" // if you use the support libraries
-    kapt "com.google.dagger:dagger-android-processor:$dagger"
     api "com.google.dagger:dagger:$dagger"
+    api "com.google.dagger:dagger-android:$dagger"
     kapt "com.google.dagger:dagger-compiler:$dagger"
+    api "com.google.dagger:dagger-android-support:$dagger"
+    kapt "com.google.dagger:dagger-android-processor:$dagger"
+    // Using Dagger in androidTest and Robolectric too
+    kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger"
+    kaptTest "com.google.dagger:dagger-compiler:$dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dagger"
 
     // Glide
     implementation "com.github.bumptech.glide:glide:$glide"
