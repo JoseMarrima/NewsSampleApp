@@ -6,14 +6,14 @@ import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 
 class DaggerTestApplicationRule: TestWatcher() {
-    lateinit var component: TestApplicationComponent
-
+    lateinit var component: TestAppComponent
+        private set
 
     override fun starting(description: Description?) {
         super.starting(description)
 
         val app = ApplicationProvider.getApplicationContext<Context>() as TestNewsApplication
-        component = DaggerTestApplicationComponent.factory().create(app)
+        component = DaggerTestAppComponent.factory().create(app)
         component.inject(app)
     }
 }

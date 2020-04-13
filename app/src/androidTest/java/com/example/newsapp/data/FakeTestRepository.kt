@@ -1,5 +1,6 @@
 package com.example.newsapp.data
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.newsapp.data.source.NewsRepository
@@ -12,6 +13,7 @@ class FakeTestRepository : NewsRepository {
 
     private val observableNews = MutableLiveData<List<News>>()
 
+    @VisibleForTesting
     fun addNews(vararg news: News) {
         for (new in news) {
             newsServiceData[new.id] = new

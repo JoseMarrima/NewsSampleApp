@@ -16,11 +16,11 @@ import javax.inject.Singleton
     ViewModelFactoryModule::class,
     FragmentBuilderModule::class,
     AndroidSupportInjectionModule::class])
-interface TestApplicationComponent : AndroidInjector<TestNewsApplication> {
+interface TestAppComponent: AndroidInjector<TestNewsApplication> {
 
     @Component.Factory
     interface Factory {
-        fun create(@BindsInstance applicationContext: Context): TestApplicationComponent
+        fun create(@BindsInstance applicationContext: Context): TestAppComponent
     }
 
     val newsRepository: NewsRepository

@@ -8,9 +8,10 @@ import com.example.newsapp.data.source.remote.NewsService
 import com.example.newsapp.util.Constants
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 
-class DefaultNewsRepository(private val service: NewsService,
+class DefaultNewsRepository @Inject constructor(private val service: NewsService,
                             val newsDao: NewsDao) : NewsRepository {
 
     private suspend fun getRemoteNews(): List<News> = withContext(Dispatchers.Default) {

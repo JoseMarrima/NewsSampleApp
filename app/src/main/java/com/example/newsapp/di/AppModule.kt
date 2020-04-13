@@ -17,7 +17,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-@Module
+@Module(includes = [ApplicationModuleBinds::class])
 object AppModule {
 
     @JvmStatic
@@ -44,11 +44,12 @@ object AppModule {
             .build()
             .create(NewsService::class.java)
     }
+}
 
-    @JvmStatic
+@Module
+abstract class ApplicationModuleBinds {
+
     @Singleton
-    @Provides
-    fun provideNewsRepository(service: NewsService, newsDao: NewsDao) : NewsRepository {
-        return DefaultNewsRepository(service, newsDao)
-    }
+    @Binds
+    abstract fun bindRepository(repo: DefaultNewsRepository): NewsRepository
 }
