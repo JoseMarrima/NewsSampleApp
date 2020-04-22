@@ -150,4 +150,7 @@ dependencies {
     // Kotlin + coroutines
     implementation "androidx.work:work-runtime-ktx:$work_version"
     androidTestImplementation "androidx.work:work-testing:$work_version"
+
+    compileOnly "com.squareup.inject:assisted-inject-annotations-dagger2:0.3.2"
+    kapt "com.squareup.inject:assisted-inject-processor-dagger2:0.3.2"
 }
