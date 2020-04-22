@@ -66,4 +66,5 @@ ext {
     constraintLayout = '2.0.0-beta4'
     dagger = '2.23.2'
     glide = '4.11.0'
+    work_version = '2.3.4'
 }

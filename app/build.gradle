@@ -17,7 +17,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.example.newsapp.CustomTestRunner"
     }
     buildTypes {
         release {
@@ -145,4 +145,9 @@ dependencies {
 
     // material design
     api 'com.google.android.material:material:1.1.0-beta01'
+
+    // work manager
+    // Kotlin + coroutines
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+    androidTestImplementation "androidx.work:work-testing:$work_version"
 }

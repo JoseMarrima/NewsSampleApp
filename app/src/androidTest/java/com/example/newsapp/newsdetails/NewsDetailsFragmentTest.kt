@@ -1,5 +1,6 @@
 package com.example.newsapp.newsdetails
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -10,7 +11,6 @@ import androidx.test.filters.MediumTest
 import com.example.newsapp.DaggerTestApplicationRule
 import com.example.newsapp.R
 import com.example.newsapp.data.News
-import com.example.newsapp.data.FakeTestRepository
 import com.example.newsapp.data.source.NewsRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
@@ -31,6 +31,9 @@ class NewsDetailsFragmentTest {
      */
     @get:Rule
     val rule = DaggerTestApplicationRule()
+
+    @get:Rule
+    var instantExecutorRule = InstantTaskExecutorRule()
 
     @Before
     fun setupDaggerComponent() {
