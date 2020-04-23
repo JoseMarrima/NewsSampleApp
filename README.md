@@ -1,6 +1,6 @@
 # News App
 
-Developed a News app using Kotlin, Coroutines, MVVM, Android Arch Components, Data Binding, Single Activity Approach, Room, Coroutines, Dagger 2, Material Design, Glide, Motion Layout.
+Developed a News app using Kotlin, Coroutines, MVVM, Android Arch Components, Data Binding, Single Activity Approach, Room, Coroutines, Dagger 2, Material Design, Glide, Motion Layout, Work Manager, Unit Testing, Integration Testing and End-to-End Testing.
 
 
 
